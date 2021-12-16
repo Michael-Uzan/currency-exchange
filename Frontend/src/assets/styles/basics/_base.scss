@@ -10,7 +10,7 @@ html,
 input,
 select,
 textarea {
-    font-family: SourceSansPro-Black, sans-serif;
+    font-family: Gilroy-Regular, sans-serif;
     color: $fontColor;
     font-weight: 600;
 }
@@ -26,6 +26,11 @@ h4,
 h5,
 h6 {
     margin: 0 0 rem(8px);
+    font-weight: 500;
+}
+
+h2 {
+    color: $clr1;
 }
 
 a {
@@ -38,11 +43,11 @@ a {
 }
 
 ::selection {
-    // color: $clr7;
+    background-color: $bgcColor;
+    color: $clr1;
 }
 
 input:focus-visible,
 textarea:focus-visible {
     outline: -webkit-focus-ring-color auto 0px;
 }
-

@@ -1,0 +1,23 @@
+.rates {
+    margin-bottom: 25px;
+    .currency-form {
+        margin-bottom: 30px;
+        background-color: $bgcColor;
+        padding: 15px;
+        border-radius: 15px;
+        h2,
+        h3 {
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: rem(14px);
+            color: $clr2;
+        }
+        > div {
+            margin-bottom: 15px;
+        }
+        select {
+            width: 50px;
+        }
+    }
+}

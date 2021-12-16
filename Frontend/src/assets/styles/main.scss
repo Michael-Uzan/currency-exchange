@@ -1,15 +1,14 @@
 // Setup
-@import "setup/variables.scss";
-@import "setup/functions.scss";
-@import "setup/mixins.scss";
-@import "setup/typography.scss";
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/typography";
 
 // Basics
-@import "basics/helpers.scss";
-@import "basics/layout.scss";
-@import "basics/base.scss";
-@import "basics/buttons.scss";
-
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+@import "basics/buttons";
 
 // Components
 @import "cmps/appHeader";
@@ -24,5 +23,4 @@
 
 // Views (pages)
 @import "pages/mainApp";
-@import "pages/about";
-
+@import "pages/rates";
