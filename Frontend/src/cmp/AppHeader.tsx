@@ -8,6 +8,7 @@ export const AppHeader = () => {
             <nav className="flex justify-center">
                 <NavLink activeClassName="active" exact to="/" >Home</NavLink>
                 <NavLink activeClassName="active" exact to="/rates" >Rates</NavLink>
+                <NavLink activeClassName="active" exact to="/dashboard" >Dashboard</NavLink>
             </nav>
         </header>
     )

@@ -4,14 +4,14 @@ const logger = require('../../services/logger.service')
 const ObjectId = require('mongodb').ObjectId
 const RATE_COLLECTION = 'rates'
 
-async function query(userId) {
+async function query() {
     try {
-        const criteria = _buildCriteria(userId)
-        const collection = await dbService.getCollection('board')
-        const boards = await collection.find(criteria).toArray()
-        return boards
+        const criteria = _buildCriteria()
+        const collection = await dbService.getCollection(RATE_COLLECTION)
+        const rates = await collection.find(criteria).toArray()
+        return rates
     } catch (err) {
-        logger.error('cannot find boards', err)
+        logger.error('cannot find rates', err)
         throw err
     }
 }
@@ -88,9 +88,9 @@ async function save(board) {
 }
 
 
-function _buildCriteria(userId) {
+function _buildCriteria() {
     let criteria = {}
-    criteria.$or = [{ 'boardMembers._id': userId.userId }, { 'createdBy': null }]
+    // criteria.$or = [{ 'boardMembers._id': userId.userId }, { 'createdBy': null }]
     return criteria;
 }
 

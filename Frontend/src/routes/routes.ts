@@ -1,3 +1,4 @@
+import { Dashboard } from "../pages/Dashboard";
 import { Rates } from "../pages/Rates";
 
 interface IRoutes {
@@ -6,6 +7,10 @@ interface IRoutes {
 }
 
 const routes: IRoutes[] = [
+    {
+        path: '/dashboard',
+        component: Dashboard,
+    },
     {
         path: '/rates',
         component: Rates,

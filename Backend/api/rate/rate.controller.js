@@ -6,14 +6,14 @@ const logger = require('../../services/logger.service');
 const commissionPrecent = 0.05
 
 // GET Boards
-async function getBoards(req, res) {
+async function getRates(req, res) {
   try {
-    var userId = req.query;
-    const boards = await boardService.query(userId)
-    res.json(boards);
+    // var userId = req.query;
+    const rates = await rateService.query()
+    res.json(rates);
   } catch (err) {
-    logger.error('Failed to get boards', err)
-    res.status(500).send({ err: 'Failed to get boards' })
+    logger.error('Failed to get rates', err)
+    res.status(500).send({ err: 'Failed to get rates' })
   }
 }
 
@@ -114,7 +114,8 @@ function _filterBoard(filterBy, board) {
 
 module.exports = {
   getRate,
-  getBoards,
+  getRates,
+  // getBoards,
   // getBoardById,
   addBoard,
   removeBoard,
