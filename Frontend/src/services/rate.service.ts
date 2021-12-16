@@ -6,9 +6,13 @@ export const RateService = {
 }
 
 async function getRate(rateProperties: IRateProperties) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            return resolve(2)
-        }, 400)
-    })
+    const { srcCoin, desCoin } = rateProperties
+    return httpService.get(`rate/${srcCoin}/${desCoin}`, null)
+
+    // return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         return resolve(2)
+    //     }, 400)
+    // })
+
 }

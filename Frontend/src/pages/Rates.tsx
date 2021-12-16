@@ -30,8 +30,9 @@ export const Rates = () => {
                 <div className="flex space-between">
                     <input type="number" min={1} onChange={handleChange} name="amount" value={amount} />
                     <select value={srcCoin} onChange={handleChange} name="srcCoin">
-                        <option value="ILS"> ILS </option>
+                        <option value="ILS">ILS</option>
                         <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
                     </select>
                 </div>
                 <h3>They'll receive</h3>
@@ -40,6 +41,9 @@ export const Rates = () => {
                     <select value={desCoin} onChange={handleChange} name="desCoin">
                         <option value="PHP">PHP</option>
                         <option value="NPR">NPR</option>
+                        <option value="LKR">LKR</option>
+                        <option value="INR">INR</option>
+                        <option value="CNY">CNY</option>
                     </select>
                 </div>
             </form>
