@@ -1,9 +1,9 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2';
-import { ICurrencyRateToDollar } from '../interface/ICurrencyRateToDollar';
+import { ICurrencyRate } from '../interface/ICurrencyRate';
 
 interface PropType {
-    rates: ICurrencyRateToDollar[]
+    rates: ICurrencyRate[]
 }
 
 export const BarCurrencyRate = ({ rates }: PropType) => {
@@ -47,11 +47,6 @@ export const BarCurrencyRate = ({ rates }: PropType) => {
     };
 
     return (
-        <section className="bar-currency-rate">
-            <div>
-                <h3>Rate of currency to 1 dollar</h3>
-                <Bar height={300} width={200} data={getBarData()} options={options} />
-            </div>
-        </section>
+        <Bar height={300} width={230} data={getBarData()} options={options} />
     )
 }

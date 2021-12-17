@@ -1,0 +1,13 @@
+.dashboard {
+    margin-bottom: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+    gap: 25px 25px;
+
+    @include for-normal-layout {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Loading } from '../cmp/Loading';
-import { PokemonList } from '../cmp/PokemonList';
+// import { PokemonList } from '../cmp/RateList';
 import { eventBusService } from '../services/event-bus.service';
 import { pokemonService } from '../services/pokemon.service'
 

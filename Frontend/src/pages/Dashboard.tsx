@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BarCurrencyRate } from '../cmp/BarCurrencyRate';
+import { CurrencyRateList } from '../cmp/CurrencyRateList';
 import { Loading } from '../cmp/Loading';
 import { RateService } from '../services/rate.service'
 
@@ -19,9 +20,15 @@ export const Dashboard = () => {
     if (!rates) return <Loading />
 
     return (
-        <section className="dashboard">
-            <h1>Dashboard</h1>
-            <BarCurrencyRate rates={rates} />
+        <section className="dashboard space-between">
+            <div className="rate-dollar">
+                <h3>Rate of currency to 1 dollar</h3>
+                <BarCurrencyRate rates={rates} />
+            </div>
+            <div className="supported-coins">
+                <h3>Our supported coins</h3>
+                <CurrencyRateList currencyRates={rates} type={'img'} />
+            </div>
         </section>
     )
 }

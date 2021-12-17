@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { CurrencyRateList } from '../cmp/CurrencyRateList'
 import { Loading } from '../cmp/Loading'
 import { useForm } from '../hooks/useForm'
 import IRateProperties from '../interface/IRateProperties.interface'
@@ -18,8 +19,24 @@ export const Rates = () => {
         amount: 100
     }, onRateChange)
 
-    if (!currRate) return <Loading />
 
+    // 
+    const [rates, setRates] = useState<any>(null);
+
+    const loadRates = async () => {
+        const rates = await RateService.getRates()
+        setRates(rates)
+    }
+
+    useEffect(() => {
+        loadRates()
+    }, [])
+
+    // 
+
+
+
+    if (!currRate || !rates) return <Loading />
     const { srcCoin, desCoin, amount } = rateProperties
 
     return (
@@ -30,20 +47,14 @@ export const Rates = () => {
                 <div className="flex space-between">
                     <input type="number" min={1} onChange={handleChange} name="amount" value={amount} />
                     <select value={srcCoin} onChange={handleChange} name="srcCoin">
-                        <option value="ILS">ILS</option>
-                        <option value="EUR">EUR</option>
-                        <option value="GBP">GBP</option>
+                        <CurrencyRateList currencyRates={rates} type={'src'} />
                     </select>
                 </div>
                 <h3>They'll receive</h3>
                 <div className="flex space-between">
                     <div>{amount * currRate}</div>
                     <select value={desCoin} onChange={handleChange} name="desCoin">
-                        <option value="PHP">PHP</option>
-                        <option value="NPR">NPR</option>
-                        <option value="LKR">LKR</option>
-                        <option value="INR">INR</option>
-                        <option value="CNY">CNY</option>
+                        <CurrencyRateList currencyRates={rates} type={'des'} />
                     </select>
                 </div>
             </form>
