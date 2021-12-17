@@ -8,7 +8,7 @@ interface PropType {
 export const ImgCurrencyRate = ({ currencyRate }: PropType) => {
     return (
         <section className="img-currency-rate flex align-center space-between">
-            {currencyRate.currency} <img src={currencyRate.img} />
+            {currencyRate.currency} <img className="img-icon" src={currencyRate.img} />
         </section>
     )
 }

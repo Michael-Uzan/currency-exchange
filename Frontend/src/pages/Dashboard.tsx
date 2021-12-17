@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BarCurrencyRate } from '../cmp/BarCurrencyRate';
 import { CurrencyRateList } from '../cmp/CurrencyRateList';
 import { Loading } from '../cmp/Loading';
-import { RateService } from '../services/rate.service'
+import { rateService } from '../services/rate.service'
 
 export const Dashboard = () => {
 
@@ -13,7 +13,7 @@ export const Dashboard = () => {
     }, [])
 
     const loadRates = async () => {
-        const rates = await RateService.getRates()
+        const rates = await rateService.getRates()
         setRates(rates)
     }
 

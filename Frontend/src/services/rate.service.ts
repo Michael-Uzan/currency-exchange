@@ -1,9 +1,9 @@
 import IRateProperties from "../interface/IRateProperties.interface";
 import { httpService } from "./http.service";
 
-export const RateService = {
+export const rateService = {
     getRate,
-    getRates
+    getRates,
 }
 
 async function getRate(rateProperties: IRateProperties) {
@@ -21,3 +21,4 @@ async function getRate(rateProperties: IRateProperties) {
 async function getRates() {
     return httpService.get('rate/', null)
 }
+

@@ -6,21 +6,20 @@ interface PropType {
     rates: ICurrencyRate[]
 }
 
-export const BarCurrencyRate = ({ rates }: PropType) => {
+export const BarCurrencyRate = ({ rates: currencyRates }: PropType) => {
+    currencyRates = currencyRates.filter((currencyRate: ICurrencyRate) => currencyRate.directionType === 'des')
     const getBarData = (): any => {
         return ({
-            labels: rates.map(rate => rate.currency),
+            labels: currencyRates.map(rate => rate.currency),
             datasets: [
                 {
                     label: 'Dollar $',
-                    data: rates.map(rate => rate.rateToDollar),
+                    data: currencyRates.map(rate => rate.rateToDollar),
                     backgroundColor: [
-                        '#45cbb2',
-                        '#0079bf'
+                        '#321879',
                     ],
                     borderColor: [
-                        '#45cbb2',
-                        '#0079bf'
+                        '#321879',
                     ],
                     borderWidth: 1,
                 },
