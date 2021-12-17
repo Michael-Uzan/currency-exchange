@@ -22,7 +22,7 @@ export const Dashboard = () => {
     return (
         <section className="dashboard space-between">
             <div className="rate-dollar">
-                <h3>Rate of currency to 1 dollar</h3>
+                <h3>Rate of currency to 1$ </h3>
                 <BarCurrencyRate rates={rates} />
             </div>
             <div className="supported-coins">

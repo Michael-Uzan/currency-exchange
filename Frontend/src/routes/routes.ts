@@ -1,6 +1,8 @@
 import { Dashboard } from "../pages/Dashboard";
 import { Home } from "../pages/Home";
+import { Login } from "../pages/Login";
 import { Rates } from "../pages/Rates";
+import { Signup } from "../pages/Signup";
 
 interface IRoutes {
     path: string,
@@ -15,6 +17,14 @@ const routes: IRoutes[] = [
     {
         path: '/rates',
         component: Rates,
+    },
+    {
+        path: '/signup',
+        component: Signup,
+    },
+    {
+        path: '/login',
+        component: Login,
     },
     {
         path: '/',

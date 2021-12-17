@@ -18,11 +18,6 @@ export function setCurrRateImgs(rateProperties: IRateProperties) {
   }
 }
 
-// srcCoin: 'ILS',
-// desCoin: 'PHP',
-// amount: 100
-
-
 // export function getRobotById(robotId) {
 //   return async dispatch => {
 //     const robot = await rateService.getById(robotId)
