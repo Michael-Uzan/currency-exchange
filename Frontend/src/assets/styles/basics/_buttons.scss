@@ -2,8 +2,8 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 3px;
-&:hover{
-    background-color: #fff;
+    background-color: unset;
+    &:hover {
+        opacity: 0.8;
+    }
 }
-}
-

@@ -1,4 +1,5 @@
 import { Dashboard } from "../pages/Dashboard";
+import { Home } from "../pages/Home";
 import { Rates } from "../pages/Rates";
 
 interface IRoutes {
@@ -14,6 +15,10 @@ const routes: IRoutes[] = [
     {
         path: '/rates',
         component: Rates,
+    },
+    {
+        path: '/',
+        component: Home,
     }
 ]
 

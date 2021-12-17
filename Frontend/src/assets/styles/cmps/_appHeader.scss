@@ -11,4 +11,67 @@ header {
     a.active {
         color: $clr1;
     }
+    .btn-menu-toggle {
+        display: none;
+    }
+
+    @include for-mobile-layout {
+        .btn-menu-toggle {
+            display: block;
+            // align-self: center;
+            margin-right: 15px;
+            margin-top: 15px;
+            color: $clr1;
+            font-size: rem(24px);
+            font-weight: 800;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            flex-direction: column;
+            min-width: 210px;
+            // background-color: rgb(255 255 255 / 93%);
+            background-color: $clr3;
+            height: 100vh;
+            box-shadow: 0px 0px 0px transparent;
+            transform: translateX(100%);
+            transition: transform 0.6s;
+            z-index: 2;
+        }
+
+        &.menu-open nav {
+            transform: translateX(0);
+            box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            text-align: center;
+            width: 100%;
+            padding: 15px 0;
+            border-bottom: 1px solid #e7e7e7;
+            font-weight: 600;
+            color: $bgcColor;
+            &.active {
+                color: $clr2;
+            }
+        }
+        .screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.726);
+            z-index: 1;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s;
+        }
+        &.menu-open .screen {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
 }

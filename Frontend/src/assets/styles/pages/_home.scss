@@ -1,0 +1,16 @@
+.home {
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    h1,
+    h3 {
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+    h1 {
+        color: $clr1;
+        font-size: rem(35px);
+    }
+    .container {
+        max-width: 450px;
+    }
+}
