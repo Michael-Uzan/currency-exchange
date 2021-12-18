@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
@@ -15,7 +14,8 @@ export const Home = () => {
                     more cash and more convenience. We’re fast and secure,
                     with great rates and transfers arriving within one business day.
                     Simply choose the transfer type that suits you best: online bank transfer,
-                    cash, post office… Whatever your needs, we’ve got you covered.</p>
+                    cash, post office… Whatever your needs, we’ve got you covered.
+                </p>
                 {!loggedInUser && <button><Link to="/login"> Login to transfer</Link></button>}
                 {loggedInUser && <button><Link to="/rates"> Get started</Link></button>}
             </div>

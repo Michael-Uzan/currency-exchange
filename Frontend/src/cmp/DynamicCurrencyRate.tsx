@@ -1,4 +1,3 @@
-import React from 'react'
 import { ImgCurrencyRate } from './ImgCurrencyRate'
 import { OptionCurrencyRate } from './OptionCurrencyRate'
 

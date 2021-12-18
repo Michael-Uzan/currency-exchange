@@ -26,28 +26,6 @@ export function currencyRateReducer(state: ICurrencyRateState = INITIAL_STATE, a
         srcCurrCurrencyImg: srcCurrency[0]?.img,
         desCurrCurrencyImg: desCurrency[0]?.img,
       }
-    // case 'SET_FILTER_BY':
-    //   return {
-    //     ...state,
-    //     filterBy: action.filterBy
-    //   }
-    // case 'ADD_ROBOT':
-    //   return {
-    //     ...state,
-    //     robots: [...state.robots, action.robot]
-    //   }
-    // case 'REMOVE_ROBOT':
-    //   return {
-    //     ...state,
-    //     robots: state.robots.filter(robot => robot._id !== action.robotId)
-    //   }
-    // case 'UPDATE_ROBOT':
-    //   const currRobot = state.currRobot._id === action.robot._id ? action.robot : state.currRobot
-    //   return {
-    //     ...state,
-    //     robots: state.robots && state.robots.map(robot => robot._id === action.robot._id ? action.robot : robot),
-    //     currRobot
-    //   }
     default:
       return state
   }

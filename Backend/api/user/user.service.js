@@ -62,7 +62,6 @@ async function remove(userId) {
 
 async function update(user) {
     try {
-        // peek only updatable fields!
         const userToSave = {
             _id: ObjectId(user._id),
             username: user.username,

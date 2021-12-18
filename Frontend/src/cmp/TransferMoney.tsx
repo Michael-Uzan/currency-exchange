@@ -1,15 +1,11 @@
-import React, { FormEvent, useEffect, useState } from 'react'
-import { connect, useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { FormEvent, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { CurrencyRateList } from '../cmp/CurrencyRateList'
 import { Loading } from '../cmp/Loading'
-import { RateExamples } from '../cmp/RateExamples';
 import { useForm } from '../hooks/useForm'
-import { ICurrencyRateState } from '../interface/ICurrencyRateState';
 import IRateProperties from '../interface/IRateProperties.interface'
 import { ITransfer } from '../interface/ITransfer';
 import { eventBusService } from '../services/event-bus.service';
-import { httpService } from '../services/http.service';
 import { rateService } from '../services/rate.service'
 import { transferService } from '../services/transfer.service';
 import { RootState } from '../store';

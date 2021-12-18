@@ -17,24 +17,3 @@ export function setCurrRateImgs(rateProperties: IRateProperties) {
     dispatch({ type: 'SET_IMGS', rateProperties })
   }
 }
-
-// export function getRobotById(robotId) {
-//   return async dispatch => {
-//     const robot = await rateService.getById(robotId)
-//     dispatch({ type: 'SET_ROBOT', robot })
-//   }
-// }
-// export function tryRobot(robotId) {
-//   return async dispatch => {
-//     const robot = await rateService.tryRobot(robotId)
-//     dispatch({ type: 'UPDATE_ROBOT', robot })
-//   }
-// }
-
-// export function removeRobot(robotId) {
-//   return async dispatch => {
-//     await rateService.remove(robotId)
-//     dispatch({ type: 'REMOVE_ROBOT', robotId })
-//   }
-// }
-

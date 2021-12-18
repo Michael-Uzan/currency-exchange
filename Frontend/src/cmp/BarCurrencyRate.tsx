@@ -1,4 +1,3 @@
-import React from 'react'
 import { Bar } from 'react-chartjs-2';
 import { ICurrencyRate } from '../interface/ICurrencyRate';
 
@@ -8,6 +7,7 @@ interface PropType {
 
 export const BarCurrencyRate = ({ rates: currencyRates }: PropType) => {
     currencyRates = currencyRates.filter((currencyRate: ICurrencyRate) => currencyRate.directionType === 'des')
+
     const getBarData = (): any => {
         return ({
             labels: currencyRates.map(rate => rate.currency),

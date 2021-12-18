@@ -1,12 +1,9 @@
-import React from 'react'
 import { ITransfer } from '../interface/ITransfer'
 import { TransferPreview } from './TransferPreview'
-
 
 interface PropType {
     transfers: ITransfer[],
 }
-
 
 export const TransferList = ({ transfers }: PropType) => {
     return (

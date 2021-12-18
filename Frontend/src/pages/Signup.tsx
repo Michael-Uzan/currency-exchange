@@ -1,7 +1,7 @@
-import React, { FormEvent } from 'react'
+import { FormEvent } from 'react'
 import { Link } from 'react-router-dom';
 import { useForm } from '../hooks/useForm'
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { onSignup } from '../store/actions/userActions';
 
 export const Signup = ({ history }: any) => {

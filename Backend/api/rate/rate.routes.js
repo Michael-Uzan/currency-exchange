@@ -7,9 +7,5 @@ const router = express.Router();
 
 router.get('/:srcCoin/:desCoin', getRate)
 router.get('/', getRates);
-// router.get('/', log, getRates);
-// router.post('/',requireAuth, addBoard)
-// router.put('/:id',requireAuth ,updateBoard)
-// router.delete('/:id' , removeBoard)
 
 module.exports = router;

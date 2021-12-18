@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CurrencyRateList } from '../cmp/CurrencyRateList'
 import { Loading } from '../cmp/Loading'
 import { useForm } from '../hooks/useForm'
-import { ICurrencyRateState } from '../interface/ICurrencyRateState';
 import IRateProperties from '../interface/IRateProperties.interface'
 import { rateService } from '../services/rate.service'
 import { RootState } from '../store';

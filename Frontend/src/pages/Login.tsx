@@ -1,8 +1,7 @@
-import React, { FormEvent, useState } from 'react'
+import { FormEvent } from 'react'
 import { Link } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-import { connect, useDispatch, useSelector } from 'react-redux';
-import { eventBusService } from '../services/event-bus.service';
+import { useDispatch, } from 'react-redux';
 import { onLogin } from '../store/actions/userActions'
 
 export const Login = ({ history }: any) => {
@@ -15,7 +14,6 @@ export const Login = ({ history }: any) => {
     })
 
     const onLoginSubmit = async (ev: FormEvent<HTMLFormElement> | null = null) => {
-        // MAYBE without try catch
         try {
             if (ev) ev.preventDefault();
             await dispatch(onLogin(credentials))
@@ -26,6 +24,7 @@ export const Login = ({ history }: any) => {
     }
 
     const { username, password } = credentials;
+
     return (
         <section className="login-signup flex direction-col align-center">
             <form className="login-signup-form flex direction-col align-center justify-center" onSubmit={(ev) => onLoginSubmit(ev)}>

@@ -1,4 +1,3 @@
-import React from 'react'
 import { ICurrencyRate } from '../interface/ICurrencyRate'
 
 interface PropType {

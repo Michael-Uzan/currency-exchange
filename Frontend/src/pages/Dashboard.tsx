@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BarCurrencyRate } from '../cmp/BarCurrencyRate';
 import { CurrencyRateList } from '../cmp/CurrencyRateList';
 import { Loading } from '../cmp/Loading';
+import { ICurrencyRate } from '../interface/ICurrencyRate';
 import { rateService } from '../services/rate.service'
 
 export const Dashboard = () => {
 
-    const [rates, setRates] = useState<any>(null);
-
+    const [rates, setRates] = useState<ICurrencyRate[] | null>(null);
 
     useEffect(() => {
         loadRates()
@@ -17,7 +17,6 @@ export const Dashboard = () => {
         const rates = await rateService.getRates()
         setRates(rates)
     }
-
 
     if (!rates) return <Loading />
 

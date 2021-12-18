@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Loading } from '../cmp/Loading';
 import { TransferList } from '../cmp/TransferList';
 import { transferService } from '../services/transfer.service';

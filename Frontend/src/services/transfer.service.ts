@@ -1,4 +1,3 @@
-import IRateProperties from "../interface/IRateProperties.interface";
 import { ITransfer } from "../interface/ITransfer";
 import { httpService } from "./http.service";
 
