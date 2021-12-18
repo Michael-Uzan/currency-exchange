@@ -32,6 +32,7 @@ if (process.env.NODE_ENV === 'production') {
 const rateRoutes = require('./api/rate/rate.routes')
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
+const transferRoutes = require('./api/transfer/transfer.routes')
 // const boardRoutes = require('./api/board/board.routes')
 // const { connectSockets } = require('./services/socket.service')
 
@@ -39,6 +40,7 @@ const userRoutes = require('./api/user/user.routes')
 app.use('/api/rate', rateRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
+app.use('/api/transfer', transferRoutes)
 // app.use('/api/boards', boardRoutes)
 // connectSockets(http, session)
 

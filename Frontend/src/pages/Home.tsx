@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Home = () => {
     return (
@@ -11,6 +12,7 @@ export const Home = () => {
                     with great rates and transfers arriving within one business day.
                     Simply choose the transfer type that suits you best: online bank transfer,
                     cash, post office… Whatever your needs, we’ve got you covered.</p>
+                <button><Link to="/login"> Login to transfer</Link></button>
             </div>
         </section>
     )

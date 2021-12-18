@@ -3,8 +3,6 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CurrencyRateList } from '../cmp/CurrencyRateList'
 import { Loading } from '../cmp/Loading'
-import { RateExamples } from '../cmp/RateExamples';
-import { TransferMoney } from '../cmp/TransferMoney';
 import { useForm } from '../hooks/useForm'
 import { ICurrencyRateState } from '../interface/ICurrencyRateState';
 import IRateProperties from '../interface/IRateProperties.interface'
@@ -12,8 +10,7 @@ import { rateService } from '../services/rate.service'
 import { RootState } from '../store';
 import { getCurrencyRates, setCurrRateImgs } from '../store/actions/currencyRateActions';
 
-export const Rates = () => {
-    const loggedInUser: any = useSelector((state: RootState) => state.userModule.loggedInUser)
+export const RateExamples = () => {
     const { currencyRates, srcCurrCurrencyImg, desCurrCurrencyImg } = useSelector((state: RootState) => state.currencyRateModule)
     const dispatch = useDispatch()
 
@@ -40,14 +37,8 @@ export const Rates = () => {
     const { srcCoin, desCoin, amount } = rateProperties
 
     return (
-        <section className="rates ">
-            <div className="title">
-                <h1>Send money home with Rewire</h1>
-                <h3>Financial services that make you feel at home</h3>
-            </div>
-            {!loggedInUser && <RateExamples />}
-            {loggedInUser && <TransferMoney />}
-            {/* <form className="currency-form">
+        <section className="rates-example ">
+            <form className="currency-form">
                 <h2>Check out our rates</h2>
                 <h3>When you send</h3>
                 <div className="flex space-between align-center">
@@ -69,9 +60,8 @@ export const Rates = () => {
                         </select>
                     </div>
                 </div>
-                {loggedInUser && <button>Transfer</button>}
-                {!loggedInUser && <button><Link to="/login"> Login to transfer</Link></button>} */}
-            {/* </form> */}
-        </section >
+                <button><Link to="/login"> Login to transfer</Link></button>
+            </form>
+        </section>
     )
 }

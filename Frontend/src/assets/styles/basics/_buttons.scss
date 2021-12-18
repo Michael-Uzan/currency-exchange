@@ -2,7 +2,9 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 3px;
-    background-color: unset;
+    background-color: $clr1;
+    color: $bgcColor;
+    padding: 8px;
     &:hover {
         opacity: 0.8;
     }

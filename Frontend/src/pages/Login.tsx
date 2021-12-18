@@ -49,6 +49,11 @@ export const Login = ({ history }: any) => {
                 <button>Log in</button>
             </form>
             <Link className="to-login-signup" to="/signup">Sign up?</Link>
+            <h3>* For quick login try: </h3>
+            <small>
+                Username: user <br />
+                Password: 1234
+            </small>
         </section>
     )
 }
