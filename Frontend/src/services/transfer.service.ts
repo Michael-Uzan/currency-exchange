@@ -12,5 +12,5 @@ async function addTransfer(transfer: ITransfer) {
 }
 
 async function getTransfers() {
-    return httpService.get('/transfer', null)
+    return httpService.get('transfer/', null)
 }

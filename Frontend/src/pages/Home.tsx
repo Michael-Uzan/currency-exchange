@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 export const Home = () => {
+    const loggedInUser: any = useSelector((state: RootState) => state.userModule.loggedInUser)
+
     return (
         <section className="home flex align-center direction-col">
             <div className="container">
@@ -12,7 +16,8 @@ export const Home = () => {
                     with great rates and transfers arriving within one business day.
                     Simply choose the transfer type that suits you best: online bank transfer,
                     cash, post office… Whatever your needs, we’ve got you covered.</p>
-                <button><Link to="/login"> Login to transfer</Link></button>
+                {!loggedInUser && <button><Link to="/login"> Login to transfer</Link></button>}
+                {loggedInUser && <button><Link to="/rates"> Get started</Link></button>}
             </div>
         </section>
     )

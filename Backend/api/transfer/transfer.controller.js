@@ -17,7 +17,6 @@ async function addTransfer(req, res) {
 async function getTransfers(req, res) {
   try {
     const transfers = await transferService.query()
-    console.log('transfers', transfers)
     res.json(transfers);
   } catch (err) {
     logger.error('Failed to get transfers', err)

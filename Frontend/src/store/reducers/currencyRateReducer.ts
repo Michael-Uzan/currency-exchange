@@ -3,8 +3,8 @@ import { ICurrencyRateState } from "../../interface/ICurrencyRateState"
 
 const INITIAL_STATE: ICurrencyRateState = {
   currencyRates: [],
-  srcCurrCurrencyImg: null,
-  desCurrCurrencyImg: null,
+  srcCurrCurrencyImg: '',
+  desCurrCurrencyImg: '',
 }
 
 export function currencyRateReducer(state: ICurrencyRateState = INITIAL_STATE, action: any) {

@@ -15,6 +15,14 @@ import { transferService } from '../services/transfer.service';
 import { RootState } from '../store';
 import { getCurrencyRates, setCurrRateImgs } from '../store/actions/currencyRateActions';
 
+interface ITransferState {
+    srcCoin?: string,
+    desCoin?: string,
+    srcAmount?: number,
+    reciverName?: string,
+    msg?: string
+}
+
 export const TransferMoney = () => {
     const { currencyRates, srcCurrCurrencyImg, desCurrCurrencyImg } = useSelector((state: RootState) => state.currencyRateModule)
     const dispatch = useDispatch()
@@ -32,7 +40,7 @@ export const TransferMoney = () => {
         setCurrRate(currRate)
     }
 
-    const [transferProperties, handleChange] = useForm({
+    const [transferProperties, handleChange, setTransferProperties] = useForm({
         srcCoin: 'ILS',
         desCoin: 'PHP',
         srcAmount: 100,
@@ -56,7 +64,8 @@ export const TransferMoney = () => {
                 msg
             }
             await transferService.addTransfer(transfer)
-            eventBusService.showSuccessMsg('Transfer completed Succesfully')
+            eventBusService.showSuccessMsg('Transfer completed Succesfully!')
+            setTransferProperties((prevState: ITransferState) => ({ ...prevState, reciverName: '', msg: '' }))
         } catch (err) {
             eventBusService.showErrorMsg('Sorry cant transfer money!')
             console.log('error: ', err)
@@ -94,17 +103,14 @@ export const TransferMoney = () => {
                 <div >
                     <div className=" reciver-name flex space-between align-center">
                         <label htmlFor="reciverName">Reciver name: </label>
-                        <input
-                            type="text"
-                            name="reciverName"
-                            id="reciverName"
-                            value={reciverName}
-                            placeholder="Reciver Name"
-                            onChange={handleChange}
-                            required
+                        <input type="text" name="reciverName" id="reciverName"
+                            value={reciverName} placeholder="Reciver Name"
+                            onChange={handleChange} required
                         />
                     </div>
-                    <textarea name="msg" value={msg} placeholder="Your massage..." onChange={handleChange} required></textarea>
+                    <textarea name="msg" value={msg} placeholder="Your massage..."
+                        onChange={handleChange} required>
+                    </textarea>
                 </div>
                 <button>Transfer</button>
             </form>

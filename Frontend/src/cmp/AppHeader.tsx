@@ -42,6 +42,7 @@ export const AppHeader = () => {
                 <nav className="flex">
                     <NavLink onClick={onMenuClick} activeClassName="active" exact to="/" >Home</NavLink>
                     <NavLink onClick={onMenuClick} activeClassName="active" exact to="/rates" >Rates</NavLink>
+                    <NavLink onClick={onMenuClick} activeClassName="active" exact to="/history" >History</NavLink>
                     <NavLink onClick={onMenuClick} activeClassName="active" exact to="/dashboard" >Dashboard</NavLink>
                     {!loggedInUser && <NavLink onClick={onMenuClick} activeClassName="active" exact to="/login" >Login</NavLink>}
                     {loggedInUser && <NavLink onClick={onLogoutClick} activeClassName="active" exact to="/" >Logout</NavLink>}

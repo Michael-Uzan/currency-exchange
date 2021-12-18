@@ -1,4 +1,5 @@
 import { Dashboard } from "../pages/Dashboard";
+import { History } from "../pages/History";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Rates } from "../pages/Rates";
@@ -13,6 +14,10 @@ const routes: IRoutes[] = [
     {
         path: '/dashboard',
         component: Dashboard,
+    },
+    {
+        path: '/history',
+        component: History,
     },
     {
         path: '/rates',

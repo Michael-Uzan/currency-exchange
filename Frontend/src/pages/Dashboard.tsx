@@ -8,6 +8,7 @@ export const Dashboard = () => {
 
     const [rates, setRates] = useState<any>(null);
 
+
     useEffect(() => {
         loadRates()
     }, [])
@@ -16,6 +17,7 @@ export const Dashboard = () => {
         const rates = await rateService.getRates()
         setRates(rates)
     }
+
 
     if (!rates) return <Loading />
 
