@@ -1,6 +1,6 @@
 <h1 align="center">Rewire Currency Rates Exam - Full-Stack Project</h1>
 
-<a  href="https://rewire-exam.herokuapp.com/#/"> Link to Rewire Currency Rates  </a>
+<a  href="https://rewire-currency-exchange-6903883378cc.herokuapp.com/#/"> Link to Rewire Currency Rates  </a>
 
 <h3 align="left">This E2E Full-Stack project is an App to transfer money and calualte currency rates.</h3>
 
